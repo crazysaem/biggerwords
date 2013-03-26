@@ -74,7 +74,7 @@ public class MainPanel extends JPanel implements ActionListener, KeyListener {
 			}
 		}
 		
-		if (newKey/* && isValidKey(e.getKeyChar())*/)
+		if (newKey && isValidKey(e.getKeyCode(), e.getKeyChar()))
 		{
 			startKeypress = System.nanoTime();
 			newKey = false;
@@ -86,10 +86,10 @@ public class MainPanel extends JPanel implements ActionListener, KeyListener {
 		}
 	}
 	
-	public boolean isValidKey(char c)
+	public boolean isValidKey(int i, char c)
 	{
-		if (c>=32 && c<=90 	|| c == 'ö' || c == 'Ö' || c == 'ä' || c == 'Ä' || c == 'ü' || c == 'Ü' || c == '_' || c == '~' || c == '´' || c == '`' || c == '°' || c == '^'
-							|| c == '{' || c == '}' || c == '[' || c == ']' || c == '§' || c == '|' || c == 'ß' || c == '\\')
+		if (i>=32 && i<=90 	|| c == 'ö' || c == 'Ö' || c == 'ä' || c == 'Ä' || c == 'ü' || c == 'Ü' || c == '_' || c == '~' || c == '´' || c == '`' || c == '°' || c == '^'
+							|| c == '{' || c == '}' || c == '[' || c == ']' || c == '§' || c == '|' || c == 'ß')
 		{
 			return true;
 		}
